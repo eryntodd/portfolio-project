@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /**
  * Proof-of-concept, Film Camera.
  *Loads film, takes photos, and tracks usage.
@@ -102,3 +103,48 @@ public class FilmCamera {
     }
 }
 
+=======
+public interface FilmCamera {
+
+    /**
+     * Takes a photo using one frame of film.
+     */
+    void takePhoto();
+
+    /**
+     * Returns the number of remaining frames of film.
+     *
+     * @return number of frames remaining
+     */
+    int filmRemaining();
+
+    /**
+     * Loads new film into the camera.
+     *
+     * @param filmType type of film being loaded
+     * @param frames number of frames in the new roll
+     */
+    void newFilm(String filmType, int frames);
+
+    /**
+     * Checks whether the camera is out of film.
+     *
+     * @return true if no film remains, false otherwise
+     */
+    boolean outOfFilm();
+
+    /**
+     * Returns a description of the current exposure setting.
+     *
+     * @return exposure setting as a String
+     */
+    String exposure();
+
+    /**
+     * Returns the percentage of film that has been used.
+     *
+     * @return percent of film used (0.0 to 100.0)
+     */
+    double percentUsed();
+}
+>>>>>>> Stashed changes
