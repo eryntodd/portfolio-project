@@ -1,0 +1,26 @@
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class AbstractFilmCameraTest {
+
+    @Test
+    public void testOutOfFilm() {
+        FilmCamera cam = new FilmCameraKernelImplementation();
+
+        cam.loadFilm("35mm", 1);
+        cam.takePhoto();
+
+        assertTrue(cam.outOfFilm());
+    }
+
+    @Test
+    public void testPercentUsed() {
+        FilmCamera cam = new FilmCameraKernelImplementation();
+
+        cam.loadFilm("35mm", 10);
+        cam.takePhoto();
+
+        assertTrue(cam.percentUsed() > 0.0);
+    }
+}
+

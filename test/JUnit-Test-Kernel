@@ -1,0 +1,26 @@
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class FilmCameraKernelTest {
+
+    @Test
+    public void testLoadFilmAndRemaining() {
+        FilmCameraKernelImpl cam = new FilmCameraKernelImplementation();
+
+        cam.loadFilm("35mm", 10);
+
+        assertEquals(10, cam.filmRemaining());
+    }
+
+    @Test
+    public void testTakePhotoDecreases() {
+        FilmCameraKernelImpl cam = new FilmCameraKernelImplementation();
+
+        cam.loadFilm("35mm", 5);
+        cam.takePhoto();
+
+        assertEquals(4, cam.filmRemaining());
+    }
+}
+
+
